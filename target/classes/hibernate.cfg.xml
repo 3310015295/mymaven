@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+       <!-- 数据库连接信息 -->
+            <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+            <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+            <property name="hibernate.connection.username">root</property>
+            <property name="hibernate.connection.password">123456</property>
+   
+            <!-- 方言：根据方言不同，可以生产不同语法的SQL语句。
+                    参考：hibernate-release-4.2.4.Final\project\etc\hiberante.properties
+                    如果是MySQL5.5以上版本，那么要配置：org.hibernate.dialect.MySQL5InnoDBDialect
+             -->
+            <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+   
+            <!-- 其他常用属性： -->
+            <!-- 在控制台打印动态生成的SQL语句 -->
+            <property name="hibernate.show_sql">true</property>
+            
+            <!-- 可以格式化打印控制台的SQL语句 -->
+            <property name="hibernate.format_sql">true</property>
+            
+            <!-- 创建表策略：
+                    update : 表示如果加载映射配置时：
+                    如果数据库没有对应的表，那么就创建表结构
+                    如果数据库中有表，与映射配置是一致的，那么不做任何操作
+                    如果数据库表结构与映射不一致，那么，会自动更新表结构，已有表结构中数据不会丢失
+             -->
+            <property name="hibernate.hbm2ddl.auto">update</property>
+   
+            <!-- 映射配置管理 -->
+           <mapping resource="com/luo/pojo/Student.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

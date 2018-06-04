@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-5-28 5:23:52 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="Student" table="T_STUDENT">
+        <id name="sid" type="int">
+            <column name="SID" />
+            <generator class="native" />
+        </id>
+        <property name="sname" type="java.lang.String">
+            <column name="SNAME" />
+        </property>
+        <property name="sage" type="int">
+            <column name="SAGE" />
+        </property>
+        <property name="ssex" type="java.lang.String">
+            <column name="SSEX" />
+        </property>
+        <property name="sbirth" type="java.util.Date">
+            <column name="SBIRTH" />
+        </property>
+    </class>
+</hibernate-mapping>
